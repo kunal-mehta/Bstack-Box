@@ -17,7 +17,7 @@ RSpec.describe ApplicationController, type: :controller do
             user_name: 'kunal',
             full_name: 'Kunal Mehta',
             email: 'knlmht2@gmail.com',
-            password: 'Pass1234'
+            password: 'Test1234'
         }) }
         it 'should return nil if session not created' do
           expect(@controller.helpers.current_user).to be_nil

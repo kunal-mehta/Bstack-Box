@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   context 'User model validations' do
     let (:valid_params) { {
-      user_name: 'bond007user',
+      user_name: 'kunalm',
       full_name: 'Kunal Mehta',
       email: 'knlmht2@gmail.com',
-      password: 'Pass1234'
+      password: 'Test1234'
     } }
     it 'user_name should not be empty' do
       user = User.new(valid_params.merge({user_name: ''}))

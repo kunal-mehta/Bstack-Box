@@ -30,7 +30,7 @@ RSpec.describe DocumentsController, type: :controller do
                 user_name: 'b7documentstest',
                 full_name: 'Kunal Mehta',
                 email: 'knlmht2@gmail.com',
-                password: 'Pass1234'
+                password: 'Test1234'
             }) 
         }
         it 'documents#index should return home page' do 

@@ -6,7 +6,7 @@ RSpec.describe SessionsController, type: :controller do
             user_name: 'b007sessiontest',
             full_name: 'Kunal Mehta',
             email: 'knlmht2@gmail.com',
-            password: 'Pass1234'
+            password: 'Test1234'
         }) 
     }
     context 'User not logged in' do 

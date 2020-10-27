@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :controller do
             post :create, params: { user: { 
                 user_name: "test_user107", 
                 full_name: "a r", 
-                email: 'a@r.c', 
+                email: 'knlmht2@gmail.com', 
                 password: 'strongPwd123' } 
             }, as: :json
             expect(response).to redirect_to('/')
@@ -35,7 +35,7 @@ RSpec.describe UsersController, type: :controller do
                 user_name: 'kunal',
                 full_name: 'Kunal Mehta',
                 email: 'knlmht2@gmail.com',
-                password: 'Pass1234'
+                password: 'Test1234'
             }) 
         }
         it 'users#new should redirect to home' do 

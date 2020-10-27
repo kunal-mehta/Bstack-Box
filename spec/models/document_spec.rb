@@ -6,7 +6,7 @@ RSpec.describe Document, type: :model do
       user_name: 'bond007doc',
       full_name: 'Kunal Mehta',
       email: 'knlmht2@gmail.com',
-      password: 'Pass1234'
+      password: 'Test1234'
     }) }
     it 'files are not shared by default' do
       document = valid_user.documents.create(key: 'unique.123')
