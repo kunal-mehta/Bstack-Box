@@ -1,0 +1,24 @@
+<div class="signup-form">
+    <%= form_for(:session, url: login_path) do |f| %>
+		<h2>Login</h2>
+		<hr>
+        <div class="form-group">
+			<%= f.label :user_name, 'Username' %>
+            <%= f.text_field :user_name, class: 'form-control', 
+                required: true, maxlength: 15, value: @params && @params[:user_name] %>
+        </div>
+		<div class="form-group">
+			<%= f.label :password, 'Password' %>
+            <%= f.password_field :password, class: 'form-control', required: true, minlength: 8, maxlength: 15 %>
+        </div>
+		<div class="form-group">
+            <%= f.submit "Login", class: 'btn btn-primary btn-block btn-lg' %>
+        </div>
+        <% if @params %> 
+            <div class="form-message">
+                <small class="text-danger">Username/Password incorrect! Please try again</small>
+            </div>
+        <% end %>
+    <% end %>
+	<div class="text-center">Don't have an account? <%= link_to "Click here to Sign up", 'signup' %></div>
+</div>

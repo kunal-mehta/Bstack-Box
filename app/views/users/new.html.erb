@@ -1,0 +1,54 @@
+<div class="signup-form">
+    <%= form_for(@user, url: '/signup', method: 'post') do |f| %>
+		<h2>Sign Up</h2>
+		<hr>
+        <div class="form-group">
+            <%= f.label :user_name, 'Username', class: "#{'text-danger' if @user.errors[:user_name].any?}" %>
+            <%= f.text_field :user_name, class: "form-control #{'is-invalid' if @user.errors[:user_name].any?}", 
+                required: true, maxlength: 15 %>
+            <% if @user.errors[:user_name].any? %>
+                <small class="text-danger">
+                    <%= @user.errors[:user_name][0] %>
+                </small> 
+            <% end %>  
+        </div>
+        <div class="form-group">
+            <%= f.label :full_name, 'Name', class: "#{'text-danger' if @user.errors[:full_name].any?}" %>
+            <%= f.text_field :full_name, class: "form-control #{'is-invalid' if @user.errors[:full_name].any?}", 
+                required: true %>
+            <% if @user.errors[:full_name].any? %>
+                <small class="text-danger">
+                    <%= @user.errors[:full_name][0] %>
+                </small> 
+            <% end %>
+        </div>
+        <div class="form-group">
+            <%= f.label :email, 'Email', class: "#{'text-danger' if @user.errors[:email].any?}" %>
+            <%= f.email_field :email, class: "form-control #{'is-invalid' if @user.errors[:email].any?}", 
+                required: true %>
+            <% if @user.errors[:email].any? %>
+                <small class="text-danger">
+                    <%= @user.errors[:email][0] %>
+                </small> 
+            <% end %>
+        </div>
+		<div class="form-group">
+            <%= f.label :password, 'Password', class: "#{'text-danger' if @user.errors[:password].any?}" %>
+            <%= f.password_field :password, 
+                class: "form-control #{'is-invalid' if @user.errors[:password].any?}", 
+                required: true, minlength: 8, maxlength: 15,
+                pattern: '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*',
+                title: 'Password must be atleast 8 characters long, contain atleast one uppercase, one lowercase and a number'
+            %>
+            <% if @user.errors[:password].any? %>
+                <small class="text-danger">
+                    <%= @user.errors[:password][0] %>
+                </small> 
+            <% end %>
+        </div>
+		<div class="form-group">
+            <%= f.submit "Sign Up", class: 'btn btn-primary btn-block btn-lg' %>
+        </div>
+    <% end %>
+	<div class="text-center">Have an account? <%= link_to "Click here to login", 'login' %></div>
+</div>
