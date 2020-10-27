@@ -1,24 +1,7 @@
 # README
+For Executing the Code, Use:
+`rails s`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For Executing Unit test cases , Use:
+`bundle exec rspec`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
